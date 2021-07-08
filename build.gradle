@@ -1,0 +1,44 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.2'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'az.crbn'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+allprojects {
+	repositories {
+		mavenCentral()
+	}
+
+	apply plugin: 'java'
+
+	dependencies {
+		implementation "io.jsonwebtoken:jjwt-api:${jjwtVersion}"
+		implementation "io.jsonwebtoken:jjwt-impl:${jjwtVersion}"
+		implementation "io.jsonwebtoken:jjwt-jackson:${jjwtVersion}"
+		compileOnly 'org.projectlombok:lombok'
+		annotationProcessor "org.projectlombok:lombok"
+	}
+}
+
+subprojects {
+	sourceCompatibility = jdk_version
+	targetCompatibility = jdk_version
+}
+
+test {
+	useJUnitPlatform()
+}

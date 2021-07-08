@@ -1,0 +1,17 @@
+version: '3.1'
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: kanzopizza_mysql
+    hostname: mysql
+    restart: always
+    command: ["mysqld", "--ignore-db-dir=lost+found", "--explicit_defaults_for_timestamp"]
+    volumes:
+      - kanzopizza_mysql_db_data:/var/lib/db_data/kanzopizza/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - 3306:3306
+
+volumes:
+  kanzopizza_mysql_db_data:

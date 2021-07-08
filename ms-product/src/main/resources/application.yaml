@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: KanzoPizzaMsProduct
+  profiles:
+    active: ${ACTIVE_PROFILE:dev}
+    include:
+      - common
+      - db
+      - security
+      - client
+  main:
+    allow-bean-definition-overriding: true

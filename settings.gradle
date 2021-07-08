@@ -1,0 +1,6 @@
+rootProject.name = 'kanzopizza'
+include 'common'
+include 'ms-auth' // 8080
+include 'ms-customer' // 8081
+include 'ms-product' // 8082
+include 'ms-order' // 8083

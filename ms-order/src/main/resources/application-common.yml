@@ -1,0 +1,17 @@
+server:
+  port: ${API_SERVER_PORT:8083}
+  servlet:
+    context-path: /ms-order
+    application-display-name: ms-order
+  compression:
+    enabled: true
+    mime-types: text/html, text/xml, text/plain, text/css, application/javascript, application/json
+    min-response-size: 1024
+
+info:
+  app:
+    name: "${project.name}"
+    description: "${project.description}"
+    version: "${project.version}"
+    java:
+      version: "${java.version}"

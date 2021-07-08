@@ -1,0 +1,21 @@
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: full
+
+client:
+  ms-customer:
+    name: ms-customer
+    host: ${MS_CUSTOMER_HOST:http://localhost:8081}
+    path: /ms-customer
+  ms-product:
+    name: ms-product
+    host: ${MS_PRODUCT_HOST:http://localhost:8082}
+    path: /ms-product
+  ms-order:
+    name: ms-order
+    host: ${MS_ORDER_HOST:http://localhost:8083}
+    path: /ms-order
